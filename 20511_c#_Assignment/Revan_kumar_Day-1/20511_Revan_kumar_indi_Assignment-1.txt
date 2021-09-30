@@ -1,0 +1,142 @@
+2.Write a program to print if the given day is a working day or holiday.  Accept a number representing the day from the user and apply below logic
+	a. The number should be >0 and <=7.  
+	b. If the number is b/n 1 to 5 it is a working day
+	c. If the number is >5 - holiday
+
+using System;
+namespace project2
+{
+    class Program
+    {
+	public static void Main()
+            {
+            	int n;
+            	Console.WriteLine("Enter the Number:");
+            	n = int.Parse(Console.ReadLine());
+            	if (n>=1 && n <= 5)
+            	{
+                	Console.WriteLine("It is a Working Day");
+            	}
+            	else if (n > 5 && n<=7)
+            	{
+                	Console.WriteLine("It is a Holiday");
+            	}
+            	else
+            	{
+                	Console.WriteLine("Invalid Number");
+            	}
+           }
+    }
+}
+
+7.Write C# function to find biggest prime number in a given array.
+
+using System;
+namespace assignment
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            int i, j, p, k, biggest;
+            int[] arr = new int[8];
+            int[] prime = new int[8];
+            k = 0;
+            biggest = 0;
+            Console.Write("Enter array elements:");
+            for (i = 0; i < arr.Length; i++)
+            {
+                arr[i] =int.Parse(Console.ReadLine());
+            }
+
+            Console.Write("All Prime List:");
+            for (i = 0; i < arr.Length; i++)
+            {
+                j = 2;
+                p = 1;
+                while (j < arr[i])
+                {
+                    if (arr[i] % j == 0)
+                    {
+                        p = 0;
+                        break;
+                    }
+                    j++;
+                }
+
+                if (p == 1)
+                {
+                    prime[k] = arr[i];
+                    k++;
+                    Console.WriteLine(arr[i]);
+
+                }
+            }
+            for (i = 0; i < prime.Length; ++i)
+            {
+                if (prime[i] > biggest)
+                {
+                    biggest = prime[i];
+                }
+            }
+            Console.WriteLine("Biggest Prime Number is:"+ biggest);
+        }
+    }
+}
+
+8.Modify Q7 to so that it returns both the position and also the number.
+
+using System;
+namespace assignment
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            int i, j, p, k, biggest;
+            int[] arr = new int[8];
+            int[] prime = new int[8];
+            k = 0;
+            biggest = 0;
+            Console.Write("Enter array elements:");
+            for (i = 0; i < arr.Length; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.Write("All Prime List:");
+            for (i = 0; i < arr.Length; i++)
+            {
+                j = 2;
+                p = 1;
+                while (j < arr[i])
+                {
+                    if (arr[i] % j == 0)
+                    {
+                        p = 0;
+                        break;
+                    }
+                    j++;
+                }
+
+                if (p == 1)
+                {
+                    prime[k] = arr[i];
+                    k++;
+                    Console.WriteLine(arr[i]);
+
+                }
+            }
+            for (i = 0; i < prime.Length; ++i)
+            {
+                if (prime[i] > biggest)
+                {
+                    biggest = prime[i];
+                }
+            }
+            Console.WriteLine("Biggest Prime Number is:"+ biggest);
+            int position = Array.IndexOf(arr, biggest);
+            Console.WriteLine("position of array is:"+ position);
+        }
+    }
+}

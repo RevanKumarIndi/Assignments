@@ -1,0 +1,129 @@
+1. Circle is a class with property radius and methods setRadius(), getRadius(), calcDiameter(), 
+   calcArea(). Use double precision for everything. Write appropriate driver program to test the methods.
+
+using System;
+namespace assignment2
+{
+    class Circle
+    {
+        double radius;
+        public void SetRadius(double radius)
+        {
+            this.radius = radius;
+        }
+        public double GetRadius()
+        {
+            return radius;
+        }
+        public double CalcDiameter()
+        {
+            return 2 * radius;
+        }
+        public double CalcArea()
+        {
+            return Math.PI * radius * radius;
+        }
+    }
+    class Testing
+    {
+        public static void Main()
+        {
+            Circle result = new Circle();
+            result.SetRadius(4);
+            Console.WriteLine(result.GetRadius());
+            Console.WriteLine(result.CalcDiameter());
+            Console.WriteLine(result.CalcArea());
+        }
+    }
+}
+
+2. Create a class called BankAccount and have default constructor to take balance 
+   as 500 and another parameterized to take other than 500.
+
+using System;
+    namespace assignment2
+    {
+        class Bank_account
+        {
+            int min_balance, balance1;
+            public Bank_account(int balance1)
+            {
+                min_balance = 500;
+                this.balance1 = balance1;
+            }
+            public static void Main()
+            {
+                Bank_account balance = new Bank_account(501);
+                Console.WriteLine("default_balance=" + balance.min_balance);
+                Console.WriteLine("new_balance=" + balance.balance1);
+            }
+        }
+    }
+
+3. Create a class called EmployeeSalary with attributes as EmployeeId, name,
+   Basic salary, HR allowance, Travel Allowant, % of income tax deduction.   
+   Provide appropriate visibility (private/public/protected/static)  
+   of all the attributes. Create a constructor to accept employee salary details.
+
+using System;
+namespace assignment
+{
+    public class EmployeeSalary
+    {
+        string name;
+        int empid;
+        int basic;
+        int hr;
+        int travel_allowance;
+
+        public EmployeeSalary(string name, int empid, int basic, int hr, int trvlall)
+        {
+            this.name = name;
+            this.empid = empid;
+            this.basic = basic;
+            this.hr = hr;
+            this.travel_allowance = travel_allowance;
+        }
+        public string getName()
+        {
+            return name;
+        }
+        public int getEmpid()
+        {
+            return empid;
+        }
+        public int getBasic()
+        {
+            return basic;
+        }
+        public int getHr()
+        {
+            return basic;
+        }
+        public int gettravel_allowance()
+        {
+            return basic;
+        }
+        public double tax()
+        {
+            if (basic * 12 < 50000 && basic * 12 > 0)
+                return basic * 0;
+            else if (basic * 12 > 50000 && basic * 12 < 70000)
+                return basic * .15;
+            else
+                return basic * .2;
+        }
+        public int gross()
+        {
+            return basic + hr + travel_allowance;
+        }
+        static void Main(string[] args)
+        {
+            EmployeeSalary emp = new EmployeeSalary("Revan Kumar Indi", 20511, 8000, 2000, 500);
+
+            Console.WriteLine("   Hello!!\n"+" "+ emp.getName() + "\n Emp ID: " + emp.getEmpid() + ".\n Basic salary: " + emp.getBasic() + ".\n HR Allowance: " + emp.getHr() + ".\n Travel Allowance: " + emp.gettravel_allowance()+".\n Tax: " + emp.tax() + ".\n Gross: " + emp.gross());
+        }
+    }
+}
+
+
